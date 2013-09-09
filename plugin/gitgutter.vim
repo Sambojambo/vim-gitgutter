@@ -208,7 +208,7 @@ endfunction
 
 function! s:run_diff(realtime)
   if a:realtime
-    let blob_name = ':./' . fnamemodify(s:file(),':t')
+    let blob_name = ':' . fnamemodify(s:file(),':t')
     let cmd = 'diff -U0 ' . g:gitgutter_diff_args . ' <(git show '. blob_name .') - '
   else
     let cmd = 'git diff --no-ext-diff --no-color -U0 ' . g:gitgutter_diff_args . ' ' . shellescape(s:file())
